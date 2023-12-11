@@ -19,7 +19,8 @@ public class Manager {
         return customerTickets1;
     }
 
-    public List<Integer> setWinningNumbers(String inputWinningNumbers, List<Integer> winningNumbers) {
+    public List<Integer> setWinningNumbers(String inputWinningNumbers) {
+        List<Integer> winningNumbers = new ArrayList<>();
         String[] stringWinningNumbers = inputWinningNumbers.split(",");
         winningNumbers = convertStringToIntegerList(stringWinningNumbers);
         winningNumbers.sort(Comparator.naturalOrder());
