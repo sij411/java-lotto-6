@@ -10,13 +10,13 @@ public class Manager {
 
     public List<Lotto> printTickets(int numberOfTickets) {
         System.out.printf("%d개를 구매했습니다.", numberOfTickets);
-        List<Lotto> customerTickets1 = new ArrayList<>();
+        List<Lotto> customerTickets = new ArrayList<>();
         for (int i = 0; i < numberOfTickets; i++) {
             List<Integer> randomNumbers = new ArrayList<>(Randoms.pickUniqueNumbersInRange(1, 45, 6));
-            customerTickets1.add(new Lotto(randomNumbers));
-            System.out.println(customerTickets1.get(i));
+            customerTickets.add(new Lotto(randomNumbers));
+            System.out.println(customerTickets.get(i));
         }
-        return customerTickets1;
+        return customerTickets;
     }
 
     public List<Integer> setWinningNumbers(String inputWinningNumbers) {

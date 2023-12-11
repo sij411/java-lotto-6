@@ -73,9 +73,10 @@ public class Validators {
             throw new IllegalArgumentException();
         }
     }
-    public static boolean validateBonusNumber(int bonusNumber, List<Integer> winningNumbers) {
+    public static boolean validateBonusNumber(String bonusNumber, List<Integer> winningNumbers) {
        try {
-           Validators.validateBonusNumberDuplicated(bonusNumber, winningNumbers);
+           Validators.validateStringIsIntegerConvertable(bonusNumber);
+           Validators.validateBonusNumberDuplicated(Integer.parseInt(bonusNumber), winningNumbers);
            return true;
        } catch (IllegalArgumentException e) {
            System.out.println("[ERROR] 보너스 번호는 1부터 45 사이의 숫자여야 합니다.");
